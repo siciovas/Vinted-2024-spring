@@ -11,5 +11,8 @@ namespace VintedBackendAssignment
         public DateTime Date => _date;
         public Size Size => _size;
         public Provider Provider => _provider;
+
+        public decimal DiscountPrice { get; set; }
+        public decimal Discount { get; set; }
     }
 }

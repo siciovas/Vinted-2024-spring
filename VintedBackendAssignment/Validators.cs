@@ -22,19 +22,24 @@ namespace VintedBackendAssignment
             return false;
         }
 
-        private static bool IsValidDate(string input, out DateTime date)
+        public static bool IsValidDate(string input, out DateTime date)
         {
             return DateTime.TryParseExact(input, Constant.DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
         }
 
-        private static bool IsValidSize(string input, out Size size)
+        public static bool IsValidSize(string input, out Size size)
         {
             return Enum.TryParse(input, out size);
         }
 
-        private static bool IsValidProvider(string input, out Provider provider)
+        public static bool IsValidProvider(string input, out Provider provider)
         {
             return Enum.TryParse(input, out provider);
+        }
+
+        public static bool IsNextMonth(this DateTime shipmentDate, DateTime previousDate)
+        {
+            return shipmentDate.Date.Year != previousDate.Year || shipmentDate.Date.Month != previousDate.Month;
         }
     }
 }

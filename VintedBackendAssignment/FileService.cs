@@ -48,7 +48,9 @@ namespace VintedBackendAssignment
 
         public static string FormatLines(this Shipment shipment)
         {
-            return $"{shipment.Date.ToString(Constant.DateFormat)} {shipment.Size} {shipment.Provider}";
+            var discount = shipment.Discount == 0 ? "-" : shipment.Discount.ToString();
+
+            return $"{shipment.Date.ToString(Constant.DateFormat)} {shipment.Size} {shipment.Provider} {shipment.DiscountPrice:F2} {discount:F2}";
         }
     }
 }

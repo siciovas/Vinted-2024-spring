@@ -7,5 +7,6 @@
         public const string IgnoredLine = "{0} Ignored";
         public const int FreeDelivery = 3;
         public static decimal MonthlyDiscount => 10;
+        public static int LpShipmentCounter => 0;
     }
 }
